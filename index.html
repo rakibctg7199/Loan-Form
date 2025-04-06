@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Loan Abedon Form</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>লোন আবেদন ফর্ম</h2>
+    <form id="loanForm" onsubmit="return validateLoanForm()">
+
+      <label>গ্রাহকের নাম:</label>
+      <input type="text" id="name" required />
+
+      <label>গ্রাম / মহল্লা:</label>
+      <input type="text" id="village" required />
+
+      <label>ডাকঘর:</label>
+      <input type="text" id="postOffice" required />
+
+      <label>থানা:</label>
+      <input type="text" id="thana" required />
+
+      <label>জেলা:</label>
+      <input type="text" id="district" required />
+
+      <label>মাসিক আয় (৳):</label>
+      <input type="number" id="income" required />
+
+      <label>পেশা:</label>
+      <input type="text" id="profession" required />
+
+      <label>লোন নেওয়ার কারণ:</label>
+      <input type="text" id="reason" required />
+
+      <label>লোনের পরিমাণ (৳):</label>
+      <input type="number" id="loanAmount" required oninput="calculatePayable()" />
+
+      <label>মেয়াদ (মাস):</label>
+      <select id="duration" required onchange="calculatePayable()">
+        <option value="">মেয়াদ নির্বাচন করুন</option>
+        <option value="3">3</option>
+        <option value="6">6</option>
+        <option value="9">9</option>
+        <option value="12">12</option>
+        <option value="18">18</option>
+        <option value="24">24</option>
+        <option value="30">30</option>
+        <option value="36">36</option>
+      </select>
+
+      <label>আপনার পার্সোনাল বিকাশ নাম্বার:</label>
+      <input type="text" id="bkash" required />
+
+      <label>মোট পরিশোধযোগ্য টাকা (৳):</label>
+      <input type="text" id="payable" readonly />
+
+      <button type="submit">আবেদন করুন</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
